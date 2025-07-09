@@ -1,0 +1,230 @@
+{
+  "upcoming": [
+    {
+      "id": 1,
+      "title": "Fal l Kickoff Social",
+      "date": "2025-09-10",
+      "time": "6:00 PM - 8:00 PM",
+      "location": "Bruininks 230",
+      "image": "/images/events/fall-kickoff.jpg",
+      "description": "Kick off the semester with games, snacks, and community vibes! Meet fellow ACMW members and get the scoop on upcoming events.",
+      "tags": ["social", "welcome", "fall"],
+      "rsvpLink": ""
+    },
+    {
+      "id": 2,
+      "title": "Resume + LinkedIn Workshop",
+      "date": "2025-09-24",
+      "time": "5:30 PM - 7:00 PM",
+      "location": "Lind Hall 302",
+      "image": "/images/events/resume-workshop.jpg",
+      "description": "Get your resume and LinkedIn critiqued by CSE Career Services and tech recruiters. Walk away with a polished profile ready for internship season.",
+      "tags": ["professional", "workshop", "career"],
+      "rsvpLink": "https://forms.gle/exampleresume"
+    }
+  ],
+  "past": [
+    {
+      "id": 101,
+      "title": "Halloween Party",
+      "date": "2024-10-28",
+      "time": "6:00 PM - 8:00 PM",
+      "location": "Yudof Lounge",
+      "image": "/images/events/halloween-party-2024.jpg",
+      "description": "Spooky-themed party with treats, costumes, and games to celebrate Halloween together.",
+      "tags": [
+        "social",
+        "fall",
+        "fun"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 102,
+      "title": "Girls Night In",
+      "date": "2024-11-12",
+      "time": "7:00 PM - 9:00 PM",
+      "location": "Bruininks 210",
+      "image": "/images/events/girls-night-in-2024.jpg",
+      "description": "A cozy night of crafts, movies, snacks, and community building.",
+      "tags": [
+        "social",
+        "wellness"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 103,
+      "title": "Career Fair Recap",
+      "date": "2024-09-30",
+      "time": "5:30 PM - 6:30 PM",
+      "location": "Lind Hall",
+      "image": "/images/events/career-fair-recap-2024.jpg",
+      "description": "Tips and takeaways from members who attended the CSE Career Fair.",
+      "tags": [
+        "career",
+        "recap",
+        "professional"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 104,
+      "title": "Fall Tech Kickoff",
+      "date": "2024-09-10",
+      "time": "5:00 PM - 7:00 PM",
+      "location": "Walter Library",
+      "image": "/images/events/fall-tech-kickoff-2024.jpg",
+      "description": "Tech-themed kickoff to start the semester with fun activities and networking.",
+      "tags": [
+        "technical",
+        "networking"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 105,
+      "title": "Cocoa and Connect",
+      "date": "2023-12-07",
+      "time": "6:00 PM - 8:00 PM",
+      "location": "Morrill Hall Lounge",
+      "image": "/images/events/cocoa-connect-2023.jpg",
+      "description": "Wind down with cocoa and good convo before finals.",
+      "tags": [
+        "social",
+        "relax"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 106,
+      "title": "SciTech Panel",
+      "date": "2023-11-15",
+      "time": "5:00 PM - 6:30 PM",
+      "location": "Walter 101",
+      "image": "/images/events/scitech-panel-2023.jpg",
+      "description": "Industry pros share their journeys in science and technology.",
+      "tags": [
+        "panel",
+        "career",
+        "STEM"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 107,
+      "title": "Pre\u2011Registration Mingle",
+      "date": "2023-10-30",
+      "time": "4:00 PM - 6:00 PM",
+      "location": "Lind Hall 305",
+      "image": "/images/events/prereg-mingle-2023.jpg",
+      "description": "Connect with upperclassmen to get help planning your spring schedule.",
+      "tags": [
+        "academic",
+        "social"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 108,
+      "title": "Halloween Event",
+      "date": "2023-10-25",
+      "time": "6:00 PM - 8:00 PM",
+      "location": "Rapson Hall",
+      "image": "/images/events/halloween-event-2023.jpg",
+      "description": "A Halloween bash featuring costume contests, candy, and crafts.",
+      "tags": [
+        "social",
+        "fall",
+        "holiday"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 109,
+      "title": "Resume Workshop",
+      "date": "2023-09-20",
+      "time": "5:00 PM - 6:30 PM",
+      "location": "Keller Hall 3-125",
+      "image": "/images/events/resume-workshop-2023.jpg",
+      "description": "Resume review night with tech recruiters and ACMW mentors.",
+      "tags": [
+        "professional",
+        "career"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 110,
+      "title": "Fall Semester Kickoff",
+      "date": "2023-09-05",
+      "time": "6:00 PM - 7:30 PM",
+      "location": "Coffman Memorial Union",
+      "image": "/images/events/fall-semester-kickoff-2023.jpg",
+      "description": "Start off the school year with food, games, and new faces.",
+      "tags": [
+        "welcome",
+        "community"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 111,
+      "title": "Leadership Showcase",
+      "date": "2022-04-21",
+      "time": "5:00 PM - 6:30 PM",
+      "location": "Bruininks 312",
+      "image": "/images/events/leadership-showcase-2022.jpg",
+      "description": "Celebrate ACMW leaders' work with a showcase of team projects.",
+      "tags": [
+        "leadership",
+        "presentation"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 112,
+      "title": "React JS Workshop",
+      "date": "2022-03-10",
+      "time": "6:00 PM - 8:00 PM",
+      "location": "Lind Hall 340",
+      "image": "/images/events/react-workshop-2022.jpg",
+      "description": "Beginner workshop covering React fundamentals and building UI components.",
+      "tags": [
+        "technical",
+        "workshop",
+        "react"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 113,
+      "title": "Career Paths Panel",
+      "date": "2022-02-15",
+      "time": "5:30 PM - 7:00 PM",
+      "location": "Walter Library 101",
+      "image": "/images/events/career-paths-panel-2022.jpg",
+      "description": "Panel of alumni and professionals sharing advice on different career routes.",
+      "tags": [
+        "career",
+        "panel"
+      ],
+      "rsvpLink": ""
+    },
+    {
+      "id": 114,
+      "title": "Spring Tech Kickoff",
+      "date": "2022-01-20",
+      "time": "6:00 PM - 7:30 PM",
+      "location": "Keller Hall 3-210",
+      "image": "/images/events/spring-tech-kickoff-2022.jpg",
+      "description": "Start the spring semester with tech trivia and food!",
+      "tags": [
+        "spring",
+        "technical",
+        "welcome"
+      ],
+      "rsvpLink": ""
+    }
+  ]
+}
