@@ -12,7 +12,7 @@ type StatCardProps = {
 
 const StatCard = ({ icon, value, label }: StatCardProps) => {
   return (
-    <div className="bg-maroon text-silver aspect-square p-4 flex flex-col justify-center items-center font-heading w-full">
+    <div className="bg-maroon text-silver aspect-square p-4 flex flex-col justify-center items-center font-heading w-full rounded-xl">
       <div className="flex flex-row">
       <CountUp
         from={0}
@@ -29,7 +29,7 @@ const StatCard = ({ icon, value, label }: StatCardProps) => {
 
 export default function Stat() {
   return (
-    <div className="flex flex-col lg:flex-row-reverse items-start lg:items-center justify-between gap-10 mt-4">
+    <div className="flex flex-col lg:flex-row-reverse items-start lg:items-center justify-between gap-10 mt-40 lg:ml-12">
       
       {/* Right: Section header */}
       <div className="w-full lg:w-1/4 text-left lg:text-right">

@@ -24,7 +24,6 @@ export default function NavBar() {
       <ul className="flex space-x-8 text-maroon font-inter">
         {[
           { name: 'Home', href: '/' },
-          { name: 'About', href: '/about' },
           { name: 'Team', href: '/team' },
           { name: 'Events', href: '/events' },
         ].map((link) => (

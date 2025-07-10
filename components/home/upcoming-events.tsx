@@ -4,11 +4,14 @@ import React, { useEffect, useState } from "react"
 import SectionHeader from "../common/section-header"
 import Stack from "../ui/Stack"
 
-const images = [
-  { id: 1, img: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?q=80&w=500&auto=format" },
-  { id: 2, img: "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format" },
-  { id: 3, img: "https://images.unsplash.com/photo-1452626212852-811d58933cae?q=80&w=500&auto=format" },
-  { id: 4, img: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format" }
+const recent = [
+{ id: 1, img: "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format" },
+{ id: 2, img: "/images/homepage/recent.jpg" },
+]
+
+const upcoming = [
+  { id: 1, img: "/images/homepage/delay.jpg" },
+  { id: 2, img: "/images/homepage/upcoming.jpg" },
 ]
 
 export default function UpcomingEvents() {
@@ -16,14 +19,13 @@ export default function UpcomingEvents() {
 
   useEffect(() => {
     const updateCardSize = () => {
-      if (window.innerWidth < 900) {
-        setCardSize({ width: 200, height: 200 })
-      } else if (window.innerWidth < 640) {
-        setCardSize({ width: 150, height: 150 })
-      }
-      else {
-        setCardSize({ width: 300, height: 300 })
-      }
+        if (window.innerWidth < 640) {
+            setCardSize({ width: 150, height: 150 })
+        } else if (window.innerWidth < 900) {
+            setCardSize({ width: 200, height: 200 })
+        } else {
+            setCardSize({ width: 300, height: 300 })
+        }
     }
 
     updateCardSize()
@@ -31,23 +33,26 @@ export default function UpcomingEvents() {
     return () => window.removeEventListener("resize", updateCardSize)
   }, [])
 
-  return (
-    <div className="flex sm:flex-row flex-col mt-20 w-full justify-between px-6 md:px-10 items-start gap-6">
-      <SectionHeader sectionName="Events." />
-      <div className="flex justify-end gap-4 w-full md:w-auto">
-        <Stack
+    return (
+        <div className="flex sm:flex-row flex-col mt-20 w-full justify-between lg:pr-20 md:pr-12 sm:pr-10 pr-8 items-start gap-6 mt-50 mb-30">
+            <div className="flex flex-col">
+                <div className="md:h-30 h-0"></div>
+                <SectionHeader sectionName="Events." />
+            </div>
+            <div className="flex justify-end gap-4 w-full md:w-auto">
+                <Stack
           randomRotation={false}
           sensitivity={180}
           sendToBackOnClick={false}
           cardDimensions={cardSize}
-          cardsData={images}
+          cardsData={recent}
         />
         <Stack
           randomRotation={false}
           sensitivity={180}
           sendToBackOnClick={false}
           cardDimensions={cardSize}
-          cardsData={images}
+          cardsData={upcoming}
         />
       </div>
     </div>

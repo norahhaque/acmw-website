@@ -18,7 +18,7 @@ export default function Mission() {
       </motion.div>
 
       {/* Cards Grid */}
-      <motion.section className="py-16 px-20" variants={fadeUp}>
+      <motion.section className="py-16 px-10 md:px-20 sm:px-12 px-10" variants={fadeUp}>
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center" variants={fadeUp}>
           <motion.div variants={fadeUp}>
             <MissionCard

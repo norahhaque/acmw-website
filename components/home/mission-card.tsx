@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { motion } from "motion/react";
 
 type MissionCardProps = {
   imageSrc: string
@@ -10,14 +11,15 @@ export default function MissionCard({ imageSrc, title, description }: MissionCar
   return (
     <div className="max-w-sm group">
       {/* Image */}
-      <div className="relative w-full aspect-square mb-4 overflow-hidden">
+
+      <motion.div className="relative w-full aspect-square mb-4 overflow-hidden" initial={{ opacity: 0, scale: 0.80 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 2, duration: 0.7 }}>
         <Image 
           src={imageSrc} 
           alt={title} 
           fill
           className="object-cover"
         />
-      </div>
+      </motion.div>
 
       {/* Title with underline animation */}
       <h3 className="text-md sm:text-lg text-black relative w-fit">
