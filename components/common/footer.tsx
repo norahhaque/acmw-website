@@ -9,7 +9,7 @@ export default function Footer() {
         &copy; 2025 UMN ACMW. All rights reserved.
       </small>
       <p className="text-[0.65rem] leading-tight">
-        Site developed by <span className="font-semibold"><a href='norahhaque.com' target="_blank" rel="noopener noreferrer" className='underline'>Norah Haque</a></span> 
+        Site developed by <a href='norahhaque.com' target="_blank" rel="noopener noreferrer" className='underline'>Norah Haque</a>
       </p>
     </footer>
   )
