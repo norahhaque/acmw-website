@@ -76,10 +76,6 @@ export default function Stepper({
     }
   };
 
-  const handleComplete = () => {
-    setDirection(1);
-    updateStep(totalSteps + 1);
-  };
 
   return (
     <div
@@ -354,9 +350,8 @@ function StepConnector({ isComplete }: StepConnectorProps) {
   );
 }
 
-interface CheckIconProps extends React.SVGProps<SVGSVGElement> { }
 
-function CheckIcon(props: CheckIconProps) {
+function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

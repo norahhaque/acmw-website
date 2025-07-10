@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 import SectionHeader from "../common/section-header"
 import Stepper, { Step } from "../ui/Stepper"
 import { FaInstagram, FaDiscord } from "react-icons/fa"
@@ -56,7 +56,7 @@ export default function GetInvolved() {
             <div className="pb-6 justify-center flex flex-col items-center text-center">
                 <SectionHeader sectionName="Get Involved." position="center" />
                 <p className="text-gray-dark my-4 max-w-4xl sm:max-w-3xl text-sm">
-                    Join us at any of our events to make new friends, grow your technical experience, and gain access to job opportunities! Experience with computing isn't required — our doors are always open to anyone interested!
+                    Join us at any of our events to make new friends, grow your technical experience, and gain access to job opportunities! Experience with computing isn&#39;t required — our doors are always open to anyone interested!
                 </p>
             </div>
 
