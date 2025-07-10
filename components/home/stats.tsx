@@ -2,7 +2,6 @@
 
 import SectionHeader from "../common/section-header"
 import CountUp from "@/components/ui/CountUp"
-import { Users, CalendarDays, Handshake, UserCog } from "lucide-react"
 
 type StatCardProps = {
   value: number

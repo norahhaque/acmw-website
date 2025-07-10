@@ -1,7 +1,6 @@
 "use client"
 
 import React from 'react'
-import { FaInstagram, FaFacebook, FaDiscord } from "react-icons/fa"
 
 export default function Footer() {
   return (
