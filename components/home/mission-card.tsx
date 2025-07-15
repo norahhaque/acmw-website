@@ -17,7 +17,7 @@ export default function MissionCard({ imageSrc, title, description }: MissionCar
           src={imageSrc} 
           alt={title} 
           fill
-          className="object-cover"
+          className="object-cover rounded-2xl"
         />
       </motion.div>
 

@@ -7,6 +7,8 @@ type SectionHeaderProps = {
   position?: "left" | "right" | "center"
 }
 
+// Reusable header component with blurred text styling.
+// Accepts optional position prop to align text left, right, or center.
 export default function SectionHeader({ sectionName, position = "left" }: SectionHeaderProps) {
   let alignment = ""
 

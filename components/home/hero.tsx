@@ -12,7 +12,7 @@ export default function Hero() {
 
       {/* ACMW Title */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-        <BlurText text="ACMW." className="text-maroon font-heading text-[5.25rem] sm:text-8xl" animateBy="letters" />
+        <BlurText text="ACM-W." className="text-maroon font-heading text-[5.25rem] sm:text-8xl" animateBy="letters" />
       </motion.div>
 
       {/* Description */}
@@ -23,7 +23,7 @@ export default function Hero() {
 
       {/* ACMW Image */}
       <motion.div className="mt-10 lg:self-end pr-5" initial={{ opacity: 0, scale: 0.80 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.5 }}>
-        <Image src="/images/homepage/board-2025-standing.jpg" height={800} width={800} alt="2025 ACMW Group Picture" />
+        <Image src="/images/team/board/2025-board-standing.jpg" height={800} width={800} alt="2025 ACMW Group Picture" className='rounded-2xl'/>
       </motion.div>
 
 

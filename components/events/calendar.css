@@ -1,0 +1,22 @@
+.react-calendar {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+}
+
+.react-calendar__tile--active {
+  background: maroon !important;
+  color: white !important;
+  border-radius: 8px;
+}
+
+.react-calendar__tile--now {
+  background: #ffb71e !important; 
+  color: black !important;
+  border-radius: 8px;
+}
+
+.react-calendar__tile {
+  padding: 8px 0 !important;
+  border-radius: 6px;
+}

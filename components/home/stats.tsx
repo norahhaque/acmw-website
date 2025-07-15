@@ -9,6 +9,7 @@ type StatCardProps = {
 }
 
 
+// Reusable card component displaying a count-up animation and label 
 const StatCard = ({ value, label }: StatCardProps) => {
   return (
     <div className="bg-maroon text-silver aspect-square p-4 flex flex-col justify-center items-center font-heading w-full rounded-xl">

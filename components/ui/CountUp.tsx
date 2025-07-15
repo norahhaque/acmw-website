@@ -1,3 +1,6 @@
+// This component was authored by reactbits.dev. Please retain credit and avoid modifying unless necessary.
+
+
 import { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 

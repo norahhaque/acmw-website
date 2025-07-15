@@ -1,6 +1,12 @@
+// Global layout wrapper: applies fonts, nav, footer, and shared components across all pages
+
+
 import type { Metadata } from "next";
 import { Inter, Manrope, League_Gothic } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/common/navbar";
+import Footer from "@/components/common/footer";
+import BreadCrumb from "@/components/common/breadcrumb";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -34,10 +40,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${manrope.variable} ${leagueGothic.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${manrope.variable} ${leagueGothic.variable} antialiased`}>
+        <NavBar />
         {children}
+        <BreadCrumb />
+        <Footer />
       </body>
     </html>
   );

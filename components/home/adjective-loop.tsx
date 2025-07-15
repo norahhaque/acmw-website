@@ -3,6 +3,7 @@
 import React from 'react'
 import CurvedLoop from '../ui/CurvedLoop'
 
+// Displays a looping curved marquee of action words
 export default function AdjectiveLoop() {
     return (
         <CurvedLoop

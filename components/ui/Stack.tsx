@@ -1,5 +1,10 @@
+// This component was authored by reactbits.dev. Please retain credit and avoid modifying unless necessary.
+
+"use client"
+
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 
 interface CardRotateProps {
   children: React.ReactNode;
@@ -109,7 +114,7 @@ export default function Stack({
             sensitivity={sensitivity}
           >
             <motion.div
-              className="rounded-2xl overflow-hidden border-4 border-white"
+              className="relative rounded-2xl overflow-hidden border-4 border-white"
               onClick={() => sendToBackOnClick && sendToBack(card.id)}
               animate={{
                 rotateZ: (cards.length - index - 1) * 4 + randomRotate,
@@ -127,10 +132,12 @@ export default function Stack({
                 height: cardDimensions.height,
               }}
             >
-              <img
+              <Image
                 src={card.img}
                 alt={`card-${card.id}`}
-                className="w-full h-full object-cover pointer-events-none"
+                fill
+                sizes="(max-width: 500px) 100vw, 500px"
+                className="object-cover pointer-events-none"
               />
             </motion.div>
           </CardRotate>

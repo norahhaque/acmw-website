@@ -22,21 +22,21 @@ export default function Mission() {
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center" variants={fadeUp}>
           <motion.div variants={fadeUp}>
             <MissionCard
-              imageSrc="/images/homepage/community.jpg"
+              imageSrc="/images/events/event-images/2025-wits-19.png"
               title="Build Community"
               description="Connect with women and non-binary students who share your passion for tech."
             />
           </motion.div>
           <motion.div variants={fadeUp}>
             <MissionCard
-              imageSrc="/images/homepage/grow.jpg"
+              imageSrc="/images/events/event-images/2025-wits-23.png"
               title="Grow Your Skills"
               description="Level up through hands-on workshops, career panels, and mentorship."
             />
           </motion.div>
           <motion.div variants={fadeUp}>
             <MissionCard
-              imageSrc="/images/homepage/fun.jpg"
+              imageSrc="/images/events/event-images/halloween-party-3.jpg"
               title="Make It Fun"
               description="From socials to summits—we make tech empowering and exciting."
             />
