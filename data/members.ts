@@ -107,8 +107,8 @@ const members: Member[] = [
   {
     name: "Simi Khulbe",
     role: "Corporate Outreach",
-    major: "Computer Science",
-    minor: "Mathematics and Statistics",
+    major: "BIS in Computer Science, Math, and Statistics",
+    minor: null,
     year: "4th",
     gradYear: "December 2025",
     imgSrc: "/images/team/members/simi-corporate-outreach.png",
@@ -117,7 +117,7 @@ const members: Member[] = [
       { q: "What hobbies do you enjoy?", a: "Gardening, gaming, and reading." },
       { q: "What advice would you give to someone new to CS?", a: "CS can be broad and daunting! It's ok to not to know everything, making mistakes is a part of learning." }
     ],
-    description: "Simi is a 4th-year Computer Science student with minors in Mathematics and Statistics. She is set to graduate in December 2025."
+    description: "Simi is a 4th-year BIS student with concentrations in Computer Science, Mathematics, and Statistics. She is set to graduate in December 2025."
   },
   {
     name: "Joseline Rosa",
