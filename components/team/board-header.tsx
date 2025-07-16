@@ -16,7 +16,7 @@ export default function BoardHeaderImage() {
             {/* Title on small screens */}
             <div className='block sm:hidden mt-20 mx-auto px-10 mb-20'>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-                    <BlurText text="The Board." className="text-maroon font-heading text-[5.20rem] sm:text-8xl" animateBy="letters" />
+                    <BlurText text="The Board." className="text-maroon font-heading text-[4.20rem] sm:text-8xl" animateBy="letters" />
                 </motion.div>
             </div>
         </div>
