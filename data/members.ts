@@ -72,7 +72,7 @@ const members: Member[] = [
       { q: "Tell us a fun fact about you!", a: "I run a 10K every year!" },
       { q: "What advice would you give to someone new to CS?", a: "Making connections and having people skills is just as important as picking up the technical skills! You can only get so fa" }
     ],
-    description: "Norah is a 2nd-year Computer Science student with a minor in Managemennt graduating in December 2026."
+    description: "Norah is a 2nd-year Computer Science student with a minor in Management! She is looking to graduate in December 2026."
   },
   {
     name: "Harini Kuchibhotla",
