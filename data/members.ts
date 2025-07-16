@@ -70,7 +70,7 @@ const members: Member[] = [
     about: [
       { q: "What hobbies do you enjoy?", a: "I love trying out new cafe spots, traveling, gardening in the summers, and reading!" },
       { q: "Tell us a fun fact about you!", a: "I run a 10K every year!" },
-      { q: "What advice would you give to someone new to CS?", a: "Making connections and having people skills is just as important as picking up the technical skills!" }
+      { q: "What advice would you give to someone new to CS?", a: "Making connections and building people skills is just as important as picking up the technical skills!" }
     ],
     description: "Norah is a 2nd-year Computer Science student with a minor in Management! She is looking to graduate in December 2026."
   },
@@ -99,7 +99,7 @@ const members: Member[] = [
     imgSrc: "/images/team/members/adna-graphics.png",
     about: [
       { q: "What's your go-to drink order?", a: "Thai tea or earl grey latte!" },
-      { q: "What hobbies do you enjoy?", a: "Dancing, singing, beatboxing." },
+      { q: "What hobbies do you enjoy?", a: "Gardening, gaming, and reading." },
       { q: "The best programming language is ___. Why?", a: "Java, cause of the memory deallocation!" }
     ],
     description: "Adna is a 4th-year Computer Science major with minors in ITI and Leadership, on track to graduate in May 2026!"
@@ -114,8 +114,8 @@ const members: Member[] = [
     imgSrc: "/images/team/members/simi-corporate-outreach.png",
     about: [
       { q: "Tell us a fun fact about you!", a: "I'm in an a cappella group!" },
-      { q: "What hobbies do you enjoy?", a: "Gardening, gaming, and reading." },
-      { q: "What advice would you give to someone new to CS?", a: "CS can be broad and daunting! It's ok to not to know everything, making mistakes is a part of learning." }
+      { q: "What hobbies do you enjoy?", a: "Dancing, singing, beatboxing." },
+      { q: "What's your go-to drink order?", a: "Iced americano" }
     ],
     description: "Simi is a 4th-year BIS student with concentrations in Computer Science, Mathematics, and Statistics. She is set to graduate in December 2025."
   },
