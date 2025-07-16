@@ -70,7 +70,7 @@ const members: Member[] = [
     about: [
       { q: "What hobbies do you enjoy?", a: "I love trying out new cafe spots, traveling, gardening in the summers, and reading!" },
       { q: "Tell us a fun fact about you!", a: "I run a 10K every year!" },
-      { q: "What advice would you give to someone new to CS?", a: "Making connections and having people skills is just as important as picking up the technical skills! You can only get so fa" }
+      { q: "What advice would you give to someone new to CS?", a: "Making connections and having people skills is just as important as picking up the technical skills!" }
     ],
     description: "Norah is a 2nd-year Computer Science student with a minor in Management! She is looking to graduate in December 2026."
   },
