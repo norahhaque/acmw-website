@@ -26,36 +26,41 @@ export default function Events() {
     return () => window.removeEventListener('resize', updateCardSize); // Cleanup
   }, []);
 
-  // Check for presence of real upcoming events
-  const rawUpcoming = eventsData.upcoming;
-  const hasRealEvents =
-    rawUpcoming.length > 0 && rawUpcoming[0].title !== 'No Upcoming Events';
+  // Sort upcoming events by date ascending to find the soonest one
+  const sortedUpcoming = [...eventsData.upcoming].sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
 
-  // Format upcoming events data into card objects (fallback image if empty)
+  // Check for presence of real upcoming events
+  const hasRealEvents =
+    sortedUpcoming.length > 0 && sortedUpcoming[0].title !== 'No Upcoming Events';
+
+  // Only include the next upcoming event (or fallback image), plus a decorative card
   const upcomingCards = [
     ...(hasRealEvents
-      ? rawUpcoming
+      ? [sortedUpcoming[0]]  // just one event, the soonest
       : [{ id: 0, image: '/images/events/posters/delay.jpg' } as Event]
     ).map((event) => ({
       id: event.id,
       img: event.image,
     })),
-    { id: 9999, img: '/images/homepage/upcoming.jpg' }, // Final decorative card
+    { id: 9999, img: '/images/homepage/upcoming.jpg' }, // decorative card
   ];
 
+
   // Flatten all past events and extract the 3 most recent for display
-  const pastEvents = Object.keys(eventsData.past)
-    .sort((a, b) => Number(b) - Number(a)) // Sort years descending
-    .map((year) => eventsData.past[year])
-    .flat();
+  const pastEvents = Object.values(eventsData.past)
+    .flat()
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const recentCards = [
-    ...pastEvents.slice(0, 3).map((event) => ({
+    ...pastEvents.slice(0, 3).reverse().map((event) => ({
       id: event.id,
       img: event.image,
     })),
-    { id: 9998, img: '/images/homepage/recent.jpg' }, // Final decorative card
+    { id: 9998, img: '/images/homepage/recent.jpg' },  // decorative card on the top of the stack.
   ];
+
 
   // Render the Events section with two stacks: recent and upcoming
   return (

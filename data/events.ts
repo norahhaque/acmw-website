@@ -18,6 +18,7 @@ export type EventsData = {
 
 const events: EventsData = {
   upcoming: [
+    
   ],
 
   past: {
@@ -60,6 +61,16 @@ const events: EventsData = {
         location: "Keller Hall 2-246",
         image: "/images/events/posters/2025-study-night.png",
         description: "Chill study vibes with snacks and support before exams.",
+        rsvpLink: null
+      },
+      {
+        id: 28,
+        title: "Women in Tech Symposium",
+        date: "2025-04-25",
+        time: "5:00 PM - 8:00 PM",
+        location: "HSEC 3-110",
+        image: "/images/events/posters/2025-wits.png",
+        description: "Join us to hear from our University of Minnesota professors and industry professionals from Amazon, Microsoft, Google, and more! dinner will be provided.",  
         rsvpLink: null
       }
     ],
