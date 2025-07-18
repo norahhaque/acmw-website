@@ -33,7 +33,7 @@ export default function Gallery() {
   }))
 
   return (
-    <div className="my-10 mx-15 sm:mx-5">
+    <div className="my-10 mx-5 sm:mx-15">
       <SectionHeader sectionName="Past Events" position="center" />
       <p className="text-gray-dark text-heading text-sm mt-3 mb-10 max-w-4xl">
         From interactive workshops and inspiring guest speakers to fun socials and panels, here&#39;s a glimpse into the vibrant community we&#39;ve built.
