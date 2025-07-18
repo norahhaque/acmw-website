@@ -54,7 +54,6 @@ interface Item {
   height: number;
 }
 
-type GridItem = Item & { x: number; y: number; w: number; h: number };
 
 interface MasonryProps {
   items: Item[];
