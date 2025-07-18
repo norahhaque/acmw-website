@@ -2,7 +2,9 @@
 export default function Footer() {
   return (
     <footer className="mt-5 px-3 text-center text-stone-500 mb-1">
-      <small>&copy; 2025 UMN ACMW. All rights reserved.</small>
+      <p className="text-[0.65rem] leading-tight">
+        &copy; 2025 UMN ACMW. All rights reserved.
+      </p>
       <p className="text-[0.65rem] leading-tight">
         Site developed by{" "}
         <a
@@ -13,8 +15,9 @@ export default function Footer() {
         >
           Norah Haque
         </a>{" "}
-        and maintained by the ACM-W Webmasters.
+        and maintained by the ACM-W Tech Leads.
       </p>
+
     </footer>
   );
 }

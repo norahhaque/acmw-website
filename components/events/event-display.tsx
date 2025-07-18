@@ -15,21 +15,21 @@ export default function EventDisplay() {
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center" variants={fadeUp}>
           <motion.div variants={fadeUp}>
             <EventCard
-              imageSrc="/images/events/event-images/2025-wits-5.png"
+              imageSrc="/images/events/event-images/2025-wits-5.webp"
               title="Women in Tech Symposium"
               description="Our annual, most-loved event brings in faculty and industry professionals from leading companies."
             />
           </motion.div>
           <motion.div variants={fadeUp}>
             <EventCard
-              imageSrc="/images/events/event-images/prereg-mingle-5.jpg"
+              imageSrc="/images/events/event-images/prereg-mingle-5.webp"
               title="Technical Workshops"
               description="We regularly host Leetcode sessions and career panels to help members grow their technical skills."
             />
           </motion.div>
           <motion.div variants={fadeUp}>
             <EventCard
-              imageSrc="/images/events/event-images/2025-study-and-donuts.jpg"
+              imageSrc="/images/events/event-images/2025-study-and-donuts.webp"
               title="Socials"
               description="From cozy study-ins to movie nights, we help you find your people and feel at home in tech."
             />

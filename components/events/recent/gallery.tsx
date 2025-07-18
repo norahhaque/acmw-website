@@ -43,9 +43,8 @@ export default function Gallery() {
       <Masonry
         items={items}
         ease="power3.out"
-        duration={0.6}
-        stagger={2}
-        animateFrom="bottom"
+        duration={0.2}
+        stagger={0.08}
         scaleOnHover={true}
         hoverScale={0.95}
       />

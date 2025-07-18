@@ -17,12 +17,12 @@ const StatCard = ({ value, label }: StatCardProps) => {
         <CountUp
           from={0}
           to={value}
-          className="text-silver text-5xl font-league-gothic font-extrabold leading-tight"
+          className="text-silver text-5xl [@media(min-width:2000px)]:text-8xl font-league-gothic font-extrabold leading-tight"
 
         />
-        <span className="text-silver text-5xl font-league-gothic font-extrabold leading-tight">+</span>
+        <span className="text-silver text-5xl [@media(min-width:2000px)]:text-8xl font-league-gothic font-extrabold leading-tight">+</span>
       </div>
-      <p className="text-sm mt-1 text-center">{label}</p>
+      <p className="text-sm mt-1 [@media(min-width:2000px)]:text-xl text-center">{label}</p>
     </div>
   )
 }

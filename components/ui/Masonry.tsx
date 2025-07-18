@@ -1,8 +1,5 @@
-// This component was authored by reactbits.dev. Please retain credit and avoid modifying unless necessary.
-
-
 "use client";
-
+import Image from "next/image"
 import React, {
   useEffect,
   useLayoutEffect,
@@ -13,11 +10,7 @@ import React, {
 } from "react";
 import { gsap } from "gsap";
 
-const useMedia = (
-  queries: string[],
-  values: number[],
-  defaultValue: number
-): number => {
+const useMedia = (queries: string[], values: number[], defaultValue: number): number => {
   const getValue = useCallback(() => {
     if (typeof window === "undefined") return defaultValue;
     const index = queries.findIndex((q) => matchMedia(q).matches);
@@ -28,13 +21,9 @@ const useMedia = (
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-
     const handler = () => setValue(getValue());
     queries.forEach((q) => matchMedia(q).addEventListener("change", handler));
-    return () =>
-      queries.forEach((q) =>
-        matchMedia(q).removeEventListener("change", handler)
-      );
+    return () => queries.forEach((q) => matchMedia(q).removeEventListener("change", handler));
   }, [queries, getValue]);
 
   return value;
@@ -57,19 +46,6 @@ const useMeasure = <T extends HTMLElement>() => {
   return [ref, size] as const;
 };
 
-const preloadImages = async (urls: string[]): Promise<void> => {
-  await Promise.all(
-    urls.map(
-      (src) =>
-        new Promise<void>((resolve) => {
-          const img = new Image();
-          img.src = src;
-          img.onload = img.onerror = () => resolve();
-        })
-    )
-  );
-};
-
 interface Item {
   id: string;
   img: string;
@@ -85,7 +61,6 @@ interface MasonryProps {
   ease?: string;
   duration?: number;
   stagger?: number;
-  animateFrom?: "bottom" | "top" | "left" | "right" | "center" | "random";
   scaleOnHover?: boolean;
   hoverScale?: number;
   blurToFocus?: boolean;
@@ -97,7 +72,6 @@ const Masonry: React.FC<MasonryProps> = ({
   ease = "power3.out",
   duration = 0.6,
   stagger = 0.05,
-  animateFrom = "bottom",
   scaleOnHover = true,
   hoverScale = 0.95,
   blurToFocus = true,
@@ -110,39 +84,6 @@ const Masonry: React.FC<MasonryProps> = ({
   );
 
   const [containerRef, { width }] = useMeasure<HTMLDivElement>();
-  const [imagesReady, setImagesReady] = useState(false);
-
-  const getInitialPosition = useCallback(
-    (item: GridItem) => {
-      const containerRect = containerRef.current?.getBoundingClientRect();
-      if (!containerRect) return { x: item.x, y: item.y };
-
-      let direction = animateFrom;
-      if (animateFrom === "random") {
-        const dirs = ["top", "bottom", "left", "right"];
-        direction = dirs[Math.floor(Math.random() * dirs.length)] as typeof animateFrom;
-      }
-
-      switch (direction) {
-        case "top": return { x: item.x, y: -200 };
-        case "bottom": return { x: item.x, y: window.innerHeight + 200 };
-        case "left": return { x: -200, y: item.y };
-        case "right": return { x: window.innerWidth + 200, y: item.y };
-        case "center":
-          return {
-            x: containerRect.width / 2 - item.w / 2,
-            y: containerRect.height / 2 - item.h / 2,
-          };
-        default:
-          return { x: item.x, y: item.y + 100 };
-      }
-    },
-    [animateFrom, containerRef]
-  );
-
-  useEffect(() => {
-    preloadImages(items.map((i) => i.img)).then(() => setImagesReady(true));
-  }, [items]);
 
   const grid = useMemo(() => {
     if (!width) return [];
@@ -170,22 +111,23 @@ const Masonry: React.FC<MasonryProps> = ({
   const hasMounted = useRef(false);
 
   useLayoutEffect(() => {
-    if (!imagesReady) return;
+    if (!grid.length) return;
 
     grid.forEach((item, index) => {
       const selector = `[data-key="${item.id}"]`;
-      const animProps = { x: item.x, y: item.y, width: item.w, height: item.h };
+      const animProps = {
+        x: item.x,
+        y: item.y,
+        width: item.w,
+        height: item.h,
+      };
 
       if (!hasMounted.current) {
-        const start = getInitialPosition(item);
         gsap.fromTo(
           selector,
           {
             opacity: 0,
-            x: start.x,
-            y: start.y,
-            width: item.w,
-            height: item.h,
+            ...animProps,
             ...(blurToFocus && { filter: "blur(10px)" }),
           },
           {
@@ -193,7 +135,7 @@ const Masonry: React.FC<MasonryProps> = ({
             ...animProps,
             ...(blurToFocus && { filter: "blur(0px)" }),
             duration: 0.8,
-            ease: "power3.out",
+            ease: ease,
             delay: index * stagger,
           }
         );
@@ -208,7 +150,7 @@ const Masonry: React.FC<MasonryProps> = ({
     });
 
     hasMounted.current = true;
-  }, [grid, imagesReady, stagger, animateFrom, blurToFocus, duration, ease, getInitialPosition]);
+  }, [grid, stagger, blurToFocus, duration, ease]);
 
   const handleMouseEnter = (id: string, element: HTMLElement) => {
     if (scaleOnHover) {
@@ -254,10 +196,16 @@ const Masonry: React.FC<MasonryProps> = ({
           onMouseEnter={(e) => handleMouseEnter(item.id, e.currentTarget)}
           onMouseLeave={(e) => handleMouseLeave(item.id, e.currentTarget)}
         >
-          <div
-            className="relative w-full h-full bg-cover bg-center rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] uppercase text-[10px] leading-[10px]"
-            style={{ backgroundImage: `url(${item.img})` }}
-          >
+          <div className="relative w-full h-full overflow-hidden rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)]">
+            <Image
+              src={item.img}
+              alt={`Image ${item.id}`}
+              fill
+              sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+              priority={false}
+              className="object-cover rounded-[10px]"
+              style={{ borderRadius: "10px" }}
+            />
             {colorShiftOnHover && (
               <div className="color-overlay absolute inset-0 rounded-[10px] bg-gradient-to-tr from-pink-500/50 to-sky-500/50 opacity-0 pointer-events-none" />
             )}
