@@ -81,8 +81,12 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
     return () => cancelAnimationFrame(frame);
   }, [spacing, speed]);
 
-  const repeats =
-    pathLength && spacing ? Math.ceil(pathLength / spacing) + 2 : 0;
+const minRepeats = Math.ceil(window.innerWidth / spacing) + 2;
+
+const repeats =
+  pathLength && spacing
+    ? Math.max(Math.ceil(pathLength / spacing) + 2, minRepeats)
+    : 0;
   const ready = pathLength > 0 && spacing > 0;
 
   const onPointerDown = (e: PointerEvent) => {
