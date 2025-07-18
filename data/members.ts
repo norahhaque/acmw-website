@@ -61,7 +61,7 @@ const members: Member[] = [
   },
   {
     name: "Norah Haque",
-    role: "Webmaster",
+    role: "Technical Lead",
     major: "Computer Science",
     minor: "Management",
     year: "2nd",
