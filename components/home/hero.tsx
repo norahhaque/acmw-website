@@ -12,7 +12,7 @@ export default function Hero() {
 
       {/* ACMW Title */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-        <BlurText text="ACM-W." className="text-maroon font-heading text-[5.25rem] sm:text-8xl" animateBy="letters" />
+        <BlurText text="ACM-W." className="text-maroon font-heading text-[5.25rem] sm:text-8xl whitespace-nowrap overflow-hidden text-ellipsis" animateBy="letters" />
       </motion.div>
 
       {/* Description */}

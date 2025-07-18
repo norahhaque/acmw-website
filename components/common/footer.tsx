@@ -1,7 +1,7 @@
 // Simple footer shown at the bottom of all pages
 export default function Footer() {
   return (
-    <footer className="mt-5 px-3 text-center text-stone-500 mb-1">
+    <footer className="mt-5 px-3 text-center text-stone-500 mb-3">
       <p className="text-[0.65rem] leading-tight">
         &copy; 2025 UMN ACMW. All rights reserved.
       </p>
