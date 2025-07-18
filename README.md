@@ -26,12 +26,13 @@ Official site for the ACM-W student chapter at the University of Minnesota, buil
 │   ├── layout.tsx     // Global layout
 │   ├── page.tsx       // Home page
 │   └── globals.css    // Tailwind + base styles
-├── components/        // Reusable UI
-│   ├── common/
-│   ├── events/
-│   ├── home/
-│   ├── team/
-│   └── ui/
+├── components/        // All custom React components
+│   ├── common/        // Shared components used across multiple pages (e.g. Navbar, Footer)
+│   ├── events/        // Components used only on the Events page
+│   ├── home/          // Components used only on the Home page
+│   ├── team/          // Components used only on the Team page
+│   └── ui/            // Reusable visual/utility components adapted from open source (e.g. Card, BlurText)
+
 ├── data/              // Static site content
 │   ├── events.ts
 │   └── members.ts
