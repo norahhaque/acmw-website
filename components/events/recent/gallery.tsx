@@ -44,7 +44,7 @@ export default function Gallery() {
         items={items}
         ease="power3.out"
         duration={0.2}
-        stagger={0.08}
+        stagger={0.1}
         scaleOnHover={true}
         hoverScale={0.95}
       />
