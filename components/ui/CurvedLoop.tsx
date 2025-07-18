@@ -1,5 +1,4 @@
-// This component was authored by reactbits.dev. Please retain credit and avoid modifying unless necessary.
-
+"use client";
 
 import {
   useRef,
@@ -40,6 +39,7 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
   const pathRef = useRef<SVGPathElement | null>(null);
   const [pathLength, setPathLength] = useState(0);
   const [spacing, setSpacing] = useState(0);
+  const [minRepeats, setMinRepeats] = useState(6);
   const uid = useId();
   const pathId = `curve-${uid}`;
   const pathD = `M-100,40 Q500,${40 + curveAmount} 1440,40`;
@@ -50,13 +50,23 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
   const velRef = useRef(0);
 
   useEffect(() => {
-    if (measureRef.current)
+    if (measureRef.current) {
       setSpacing(measureRef.current.getComputedTextLength());
+    }
   }, [text, className]);
 
   useEffect(() => {
-    if (pathRef.current) setPathLength(pathRef.current.getTotalLength());
+    if (pathRef.current) {
+      setPathLength(pathRef.current.getTotalLength());
+    }
   }, [curveAmount]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && spacing > 0) {
+      const screenRepeats = Math.ceil(window.innerWidth / spacing) + 2;
+      setMinRepeats(screenRepeats);
+    }
+  }, [spacing]);
 
   useEffect(() => {
     if (!spacing) return;
@@ -81,12 +91,11 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
     return () => cancelAnimationFrame(frame);
   }, [spacing, speed]);
 
-const minRepeats = Math.ceil(window.innerWidth / spacing) + 2;
+  const repeats =
+    pathLength && spacing
+      ? Math.max(Math.ceil(pathLength / spacing) + 2, minRepeats)
+      : 0;
 
-const repeats =
-  pathLength && spacing
-    ? Math.max(Math.ceil(pathLength / spacing) + 2, minRepeats)
-    : 0;
   const ready = pathLength > 0 && spacing > 0;
 
   const onPointerDown = (e: PointerEvent) => {
@@ -135,7 +144,7 @@ const repeats =
       onPointerLeave={endDrag}
     >
       <svg
-        className="select-none w-full overflow-visible block aspect-[6/1] aspect-[5/1] text-[4.7rem] md:text-[2.5rem] xl:text-[2rem] tracking-[5px] uppercase leading-none"
+        className="select-none w-full overflow-visible block aspect-[6/1] text-[4.7rem] md:text-[2.5rem] xl:text-[2rem] tracking-[5px] uppercase leading-none"
         viewBox="0 0 1440 60"
       >
         <text
@@ -155,7 +164,10 @@ const repeats =
           />
         </defs>
         {ready && (
-          <text xmlSpace="preserve" className={`fill-black/90 ${className ?? ""}`}>
+          <text
+            xmlSpace="preserve"
+            className={`fill-black/90 ${className ?? ""}`}
+          >
             <textPath href={`#${pathId}`} xmlSpace="preserve">
               {Array.from({ length: repeats }).map((_, i) => (
                 <tspan
