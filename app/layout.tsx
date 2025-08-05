@@ -3,6 +3,7 @@
 
 import type { Metadata } from "next";
 import { Inter, Manrope, League_Gothic } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 import NavBar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${manrope.variable} ${leagueGothic.variable} antialiased`}>
         <NavBar />
         {children}
+        <Analytics />
         <BreadCrumb />
         <Footer />
       </body>
