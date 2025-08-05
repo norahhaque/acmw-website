@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# ACM-W UMN Website
 
-First, run the development server:
+Official site for the ACM-W student chapter at the University of Minnesota, built with **Next.js**, **TypeScript**, and **Tailwind CSS**. Designed to be clean, responsive, and easy to maintain through structured data and modular components.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Tech Stack
+
+* Next.js (App Router)
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* Vercel (Deployment)
+
+---
+
+## Project Structure
+
+```
+.
+├── app/               // Pages and routing (App Router)
+│   ├── api/           // Dynamic API routes
+│   ├── events/        // Events page
+│   ├── team/          // Team page
+│   ├── layout.tsx     // Global layout
+│   ├── page.tsx       // Home page
+│   └── globals.css    // Tailwind + base styles
+├── components/        // All custom React components
+│   ├── common/        // Shared components used across multiple pages (e.g. Navbar, Footer)
+│   ├── events/        // Components used only on the Events page
+│   ├── home/          // Components used only on the Home page
+│   ├── team/          // Components used only on the Team page
+│   └── ui/            // Reusable visual/utility components adapted from open source (e.g. Card, BlurText)
+
+├── data/              // Static site content
+│   ├── events.ts
+│   └── members.ts
+├── lib/               // Utility functions
+│   └── getPhotos.ts   // Dynamic photo loader
+├── public/images/     // Images used on site
+├── next.config.ts
+├── package.json
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone https://github.com/norahhaque/acmw-website.git
+cd acmw-website
+npm install
+npm run dev
+```
 
-## Learn More
+Site runs locally at `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Live site is deployed via **Vercel**
+* Any commit to `main` triggers an automatic deploy
+* Add new webmasters to:
 
-## Deploy on Vercel
+  * GitHub repo as collaborators
+  * Vercel project as team members (for deploy logs and previews)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Data Structure (in `/data/`)
+
+### `members.ts`
+
+```ts
+type Member = {
+  name: string
+  role: string | null
+  major: string | null
+  minor: string | null
+  year: string | null
+  gradYear: string | null
+  imgSrc: string
+  description: string | null
+  about: { q: string | null; a: string | null }[]
+}
+```
+
+**Example Entry:**
+
+```ts
+{
+  name: "Jane Doe",
+  role: "President",
+  major: "Computer Science",
+  minor: "Math",
+  year: "Junior",
+  gradYear: "2026",
+  imgSrc: "/images/jane.jpg",
+  description: "Loves building inclusive spaces for women in tech.",
+  about: [
+    { q: "What do you enjoy outside tech?", a: "Painting and kickboxing." },
+    { q: "Why ACM-W?", a: "Community and mentorship." }
+  ]
+}
+```
+
+---
+
+### `events.ts`
+
+```ts
+type Event = {
+  id: number
+  title: string
+  date: string
+  time: string | null
+  location: string | null
+  image: string
+  description: string
+  rsvpLink: string | null
+}
+```
+
+**Example Entry:**
+
+```ts
+{
+  id: 1,
+  title: "Resume Workshop",
+  date: "2025-09-15",
+  time: "5:00 PM – 6:30 PM",
+  location: "Keller 3-230",
+  image: "/images/resume.jpg",
+  description: "Hands-on workshop to polish your resume before fall career fair.",
+  rsvpLink: "https://z.umn.edu/acmw-resume"
+}
+```
+
+---
+
+## Best Practices
+
+* Add/update content using the `data/` folder—don’t hardcode.
+* Match image names to member/event names when possible.
+* Test all changes locally (`npm run dev`) before pushing to `main`.
+* Keep commits descriptive and code clean.
+
+---
+
+## Credits
+
+Developed by Norah Haque (2025). Maintained by ACM-W Tech Leads.
+
+---
+
