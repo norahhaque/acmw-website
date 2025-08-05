@@ -69,6 +69,7 @@ export default function GetInvolved() {
 
     return (
         <div className="w-full max-w-7xl mx-auto p-4 text-sm overflow-x-hidden">
+            <div className="block md:hidden h-10"></div>
             <div className="pb-6 justify-center flex flex-col items-center text-center">
                 <SectionHeader sectionName="Get Involved." position="center" />
             </div>
