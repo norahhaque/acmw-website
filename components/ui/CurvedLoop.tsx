@@ -82,7 +82,9 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
   }, [spacing, speed]);
 
   const repeats =
-    pathLength && spacing ? Math.ceil(pathLength / spacing) + 2 : 0;
+  pathLength && spacing
+    ? Math.ceil(pathLength / spacing) + (window.innerWidth < 768 ? 4 : 2)
+    : 0;
   const ready = pathLength > 0 && spacing > 0;
 
   const onPointerDown = (e: PointerEvent) => {
