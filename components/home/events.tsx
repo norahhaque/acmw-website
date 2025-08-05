@@ -14,7 +14,7 @@ export default function Events() {
     const updateCardSize = () => {
        if (window.innerWidth > 2000) {
         setCardSize({ width: 420, height: 420 }); // Small screens
-      } else if (window.innerWidth < 640) {
+      } else if (window.innerWidth < 500) {
         setCardSize({ width: 150, height: 150 }); // Small screens
       } else if (window.innerWidth < 900) {
         setCardSize({ width: 200, height: 200 }); // Medium screens
