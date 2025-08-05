@@ -5,6 +5,8 @@ import SectionHeader from "../common/section-header"
 import Stepper, { Step } from "../ui/Stepper"
 import { FaInstagram, FaDiscord } from "react-icons/fa"
 import { motion, Variants } from "framer-motion"
+import { MdOutlineEmail } from "react-icons/md";
+
 
 type EngageCardProps = {
     title: string
@@ -51,6 +53,11 @@ export default function GetInvolved() {
             label: "Discord",
             href: "http://z.umn.edu/acmwdiscord",
         },
+        {
+            icon: <MdOutlineEmail size={24} />,
+            label: "Email",
+            href: "mailto:acmw@umn.edu",
+        }
     ]
 
     // Framer Motion animation variants for card fade-in
@@ -85,13 +92,13 @@ export default function GetInvolved() {
                             href: "https://umn.us3.list-manage.com/subscribe?u=935834d5c085277674626b571&id=5439a6d3d0"
                         },
                         {
-                            title: "Connect",
+                            title: "Inquiries",
                             description: "Have questions about ACMW or tech at UMN? Drop them here.",
                             buttonText: "Contact Form",
                             href: "https://docs.google.com/forms/d/e/1FAIpQLSetmRLI-oE5zZ3_OZJMupnu7edQJGH_Ig7VJDJGZXIEUJCBZw/viewform"
                         },
                         {
-                            title: "Socials",
+                            title: "Connect",
                             description: "Catch our latest events, updates, and behind-the-scenes on social media.",
                             children: (
                                 <div className="flex justify-center gap-6 mb-4">
@@ -113,7 +120,7 @@ export default function GetInvolved() {
                 {/* Right column: Stepper for explaining how to join the board */}
                 <motion.div custom={3} initial="hidden" whileInView="visible"variants={cardVariants}>
                     <EngageCard
-                        title="Join the Board"
+                        title="Join Us"
                         description="Passionate about tech, diversity, and leadership? Explore how to become a board member."
                     >
                         <Stepper initialStep={1} stepCircleContainerClassName="!border-gray-300" stepContainerClassName="px-4 pt-4" footerClassName="px-4 pb-4">
