@@ -99,7 +99,7 @@ export default function GetInvolved() {
                         },
                         {
                             title: "Connect",
-                            description: "Catch our latest events, updates, and behind-the-scenes on social media.",
+                            description: "Updates, events, and ways to connect — all linked below.",
                             children: (
                                 <div className="flex justify-center gap-6 mb-4">
                                     {socials.map(({ icon, label, href }, idx) => (
