@@ -93,7 +93,7 @@ export default function GetInvolved() {
                         },
                         {
                             title: "Inquiries",
-                            description: "Have questions about ACMW or tech at UMN? Drop them here.",
+                            description: "Have questions about ACM-W or tech at UMN? Drop them here.",
                             buttonText: "Contact Form",
                             href: "https://docs.google.com/forms/d/e/1FAIpQLSetmRLI-oE5zZ3_OZJMupnu7edQJGH_Ig7VJDJGZXIEUJCBZw/viewform"
                         },
@@ -127,7 +127,7 @@ export default function GetInvolved() {
                             <Step>
                                 <h2 className="text-lg text-maroon font-header">Step 1:</h2>
                                 <h2 className="text-sm text-gray mt-1">
-                                    Attend 3+ meetings in a semester to become an official ACMW member.
+                                    Attend 3+ meetings in a semester to become an official ACM-W member.
                                 </h2>
                             </Step>
                             <Step>

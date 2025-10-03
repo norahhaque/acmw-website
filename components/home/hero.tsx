@@ -17,13 +17,13 @@ export default function Hero() {
 
       {/* Description */}
       <motion.p className="text-black/75 max-w-prose mt-5" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}>
-        ACMW is the University of Minnesota&#39;s chapter of the Association for Computing Machinery–Women, supporting women and non-binary students in tech through community, mentorship, and career-building events.
+        ACM-W is the University of Minnesota&#39;s chapter of the Association for Computing Machinery-Women, supporting women and non-binary students in tech through community, mentorship, and career-building events.
       </motion.p>
 
 
       {/* ACMW Image */}
       <motion.div className="mt-10 lg:self-end pr-5" initial={{ opacity: 0, scale: 0.80 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.5 }}>
-        <Image src="/images/team/board/2025-board-standing.jpg" height={800} width={800} alt="2025 ACMW Group Picture" className='rounded-2xl'/>
+        <Image src="/images/team/board/2025-board-standing.jpg" height={800} width={800} alt="2025 ACM-W Group Picture" className='rounded-2xl'/>
       </motion.div>
 
 

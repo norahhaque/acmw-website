@@ -135,6 +135,21 @@ const members: Member[] = [
     description: "Joseline is a 4th-year Computer Science major planning to graduate in May 2026!"
   },
   {
+    name: "Jihee Kim",
+    role: "Event Chair",
+    major: "Industrial Engineering",
+    minor: null,
+    year: "4th",
+    gradYear: "May 2026",
+    imgSrc: "/images/team/members/jihee-events.png",
+    about: [
+      { q: "Tell us a fun fact about you!", a: "I have a dog who thinks he's a human!" },
+      { q: "What's your go-to drink order?", a: "Lychee Green Tea" },
+      { q: "What advice would you give to someone new to CS?", a: "Start with small projects" }
+    ],
+    description: "Jihee is a 4th-year Industrial Engineering major planning to graduate in May 2026!"
+  },
+  {
     name: "Shana Watters",
     role: "Advisor",
     major: null,
@@ -147,7 +162,7 @@ const members: Member[] = [
       { q: null, a: null },
       { q: null, a: null }
     ],
-    description: "Dr. Watters, a Teaching Professor in Computer Science, brings years of experience in computing education and a deep commitment to supporting gender minorities in tech. As ACMW's faculty advisor, she provides guidance and institutional support to help the club thrive."
+    description: "Dr. Watters, a Teaching Professor in Computer Science, brings years of experience in computing education and a deep commitment to supporting gender minorities in tech. As ACM-W's faculty advisor, she provides guidance and institutional support to help the club thrive."
   }
 ]
 

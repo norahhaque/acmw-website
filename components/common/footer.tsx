@@ -3,7 +3,7 @@ export default function Footer() {
   return (
     <footer className="mt-5 px-3 text-center text-stone-500 mb-3">
       <p className="text-[0.65rem] leading-tight">
-        &copy; 2025 UMN ACMW. All rights reserved.
+        &copy; 2025 UMN ACM-W. All rights reserved.
       </p>
       <p className="text-[0.65rem] leading-tight">
         Site developed by{" "}
