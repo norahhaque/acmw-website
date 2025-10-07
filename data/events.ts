@@ -18,6 +18,16 @@ export type EventsData = {
 
 const events: EventsData = {
   upcoming: [
+     {
+        id: 33,
+        title: "Spring Tech Kickoff",
+        date: "2025-10-16",
+        time: "5:30 PM - 7:00 PM",
+        location: "Keller 2-260",
+        image: "/images/events/posters/2025-girls-night-in.png",
+        description: "Join ACM-W for a cozy evening filled with movies, snacks, and fun vibes! ",
+        rsvpLink: "https://forms.gle/vHnxhXewXyFLFaL38"
+      },
     
   ],
 
@@ -71,6 +81,46 @@ const events: EventsData = {
         location: "HSEC 3-110",
         image: "/images/events/posters/2025-wits.png",
         description: "Join us to hear from our University of Minnesota professors and industry professionals from Amazon, Microsoft, Google, and more! dinner will be provided.",  
+        rsvpLink: null
+      },
+      {
+        id: 29,
+        title: "Fall Tech Kickoff",
+        date: "2025-09-04",
+        time: "6:00 PM - 8:00 PM",
+        location: "HSEC 3-110",
+        image: "/images/events/posters/2025-fall-tech-kickoff.png",
+        description: "Fall Tech Kickoff is this Thursday! Come by to meet several CS&E student orgs in HSEC 3-110 from 6-8PM! We will have pizza ",  
+        rsvpLink: null
+      },
+      {
+        id: 30,
+        title: "STEM For All Fair",
+        date: "2025-09-10",
+        time: "5:30 PM - 7:00 PM",
+        location: "HSEC 3-110",
+        image: "/images/events/posters/2025-stem-for-all.png",
+        description: "We are proud to announce that this week 9 student groups are coming together to host the first ever STEM for ALL Fair, which aims to introduce students to the diverse groups in STEM at the U and allow them to connect and collaborate. Come join our communities this Wednesday at 5:30-7:00 pm in HSEC 3-110 and enjoy pizza and soda!",  
+        rsvpLink: null
+      },
+      {
+        id: 31,
+        title: "ACM-W X CTG: Ace the Technical Interview",
+        date: "2025-09-18",
+        time: "5:30 PM - 6:30 PM",
+        location: "Amundson 240",
+        image: "/images/events/posters/2025-technical-interview.png",
+        description: "Want to land your first tech internship or sharpen up for interviews? 💻 ACM-W x Code the Gap are hosting a hands-on workshop where we’ll break down technical interviews, practice LeetCode, and share real tips to help you tackle problems with confidence.",
+        rsvpLink: null
+      },
+      {
+        id: 32,
+        title: "ACM-W X SWE: So You Want To Get an Internship",
+        date: "2025-09-23",
+        time: "6:00 PM - 7:00 PM",
+        location: "Lind L125",
+        image: "/images/events/posters/2025-internship-panel.png",
+        description: "ACM-W x SWE are hosting an intern panel where there will be past interns from describing their internship experiences and answering questions! Food will be provided.",
         rsvpLink: null
       }
     ],

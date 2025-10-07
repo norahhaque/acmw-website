@@ -118,6 +118,7 @@ export default function GetInvolved() {
                 </div>
 
                 {/* Right column: Stepper for explaining how to join the board */}
+                
                 <motion.div custom={3} initial="hidden" whileInView="visible"variants={cardVariants}>
                     <EngageCard
                         title="Join Us"
