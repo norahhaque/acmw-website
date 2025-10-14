@@ -20,7 +20,7 @@ const events: EventsData = {
   upcoming: [
      {
         id: 33,
-        title: "Spring Tech Kickoff",
+        title: "Girls Night In",
         date: "2025-10-16",
         time: "5:30 PM - 7:00 PM",
         location: "Keller 2-260",
