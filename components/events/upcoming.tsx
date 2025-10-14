@@ -54,7 +54,7 @@ export default function Upcoming() {
               <div className="mt-4 lg:mt-0 sm:ml-4">
                 <h1 className="font-header text-xl">{eventCard.title}</h1>
                 <h3 className="italic text-sm">
-                  {new Date(eventCard.date).toLocaleDateString("en-US", {
+                  {new Date(`${eventCard.date}T00:00:00`).toLocaleDateString("en-US", {
                     month: "short",
                     day: "numeric",
                     weekday: "long",
