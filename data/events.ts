@@ -18,17 +18,16 @@ export type EventsData = {
 
 const events: EventsData = {
   upcoming: [
-     {
-        id: 33,
-        title: "Girls Night In",
-        date: "2025-10-16",
-        time: "5:30 PM - 7:00 PM",
-        location: "Keller 2-260",
-        image: "/images/events/posters/2025-girls-night-in.png",
-        description: "Join ACM-W for a cozy evening filled with movies, snacks, and fun vibes! ",
-        rsvpLink: "https://forms.gle/vHnxhXewXyFLFaL38"
-      },
-    
+    {
+      id: 34,
+        title: "WIB x ACMW: Crafts and Cookies",
+        date: "2025-11-13",
+        time: "5:00 PM - 6:00 PM",
+        location: "Bruininks 330",
+        image: "/images/events/posters/2025-crafts-and-cookies.png",
+        description: "WiB x ACM-W are teaming up for a bracelet-making night with Insomnia Cookies. Friendship bracelets, bead bracelets, rubber band bracelets — all supplies provided!",
+        rsvpLink: "https://forms.gle/ndgC825Co3uALRps6"
+    }
   ],
 
   past: {
@@ -122,7 +121,17 @@ const events: EventsData = {
         image: "/images/events/posters/2025-internship-panel.png",
         description: "ACM-W x SWE are hosting an intern panel where there will be past interns from describing their internship experiences and answering questions! Food will be provided.",
         rsvpLink: null
-      }
+      },
+      {
+        id: 33,
+        title: "Girls Night In",
+        date: "2025-10-16",
+        time: "5:30 PM - 7:00 PM",
+        location: "Keller 2-260",
+        image: "/images/events/posters/2025-girls-night-in.png",
+        description: "Join ACM-W for a cozy evening filled with movies, snacks, and fun vibes! ",
+        rsvpLink: "https://forms.gle/vHnxhXewXyFLFaL38"
+      },
     ],
     "2024": [
       {
