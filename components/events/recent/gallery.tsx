@@ -98,7 +98,7 @@ export default function Gallery() {
       </div>
 
       {/* Display events grouped by event - alternating left/right layout */}
-      {eventGroups.map(({ event, photos }, index) => {
+      {eventGroups.map(({ event, photos }) => {
         const items = photos.map((photo, photoIndex) => ({
           id: `${event.id}-${photoIndex}`,
           img: photo.img,
