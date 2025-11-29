@@ -16,16 +16,39 @@ export type EventsData = {
   }
 }
 
+// HOW TO ADD A NEW EVENT:
+// 1. Choose a unique ID number (increment from the last event ID)
+// 2. Add event object to either `upcoming` or `past[year]` array
+// 3. Add event poster image to /public/images/events/posters/
+// 4. (Optional) Add event photos to /public/images/events/event-images/
+//    - Name photos with format: {eventId}-description.ext
+//    - The eventId must match the event's ID below
+//    - The description can be anything (helps you organize files, but is ignored by the code)
+//    - Example: 35-workshop-1.webp, 35-coding-session-2.webp, 35-group-photo.webp
+//    - Photos will automatically appear on /events/recent page grouped by event
+//
+// Example event structure:
+// {
+//   id: 35,
+//   title: "Spring Workshop",
+//   date: "2026-03-15",  // Format: YYYY-MM-DD
+//   time: "5:00 PM - 6:30 PM",
+//   location: "Keller Hall 3-180",
+//   image: "/images/events/posters/2026-spring-workshop.png",
+//   description: "Learn about web development with hands-on coding exercises.",
+//   rsvpLink: "https://forms.gle/example" // or null if no RSVP needed
+// }
+
 const events: EventsData = {
   upcoming: [
     {
       id: 34,
-        title: "WIB x ACMW: Crafts and Cookies",
+        title: "WIB x ACM-W: Crafts and Cookies",
         date: "2025-11-13",
         time: "5:00 PM - 6:00 PM",
         location: "Bruininks 330",
         image: "/images/events/posters/2025-crafts-and-cookies.png",
-        description: "WiB x ACM-W are teaming up for a bracelet-making night with Insomnia Cookies. Friendship bracelets, bead bracelets, rubber band bracelets — all supplies provided!",
+        description: "WiB x ACM-W are teaming up for a bracelet-making night with Insomnia Cookies. Friendship bracelets, bead bracelets, rubber band bracelets - all supplies provided!",
         rsvpLink: "https://forms.gle/ndgC825Co3uALRps6"
     }
   ],
@@ -39,7 +62,7 @@ const events: EventsData = {
         time: "5:30 PM - 7:00 PM",
         location: null,
         image: "/images/events/posters/2024-spring-techkickoff.png",
-        description: "Start your spring semester strong with networking, snacks, and an intro to ACMW.",
+        description: "Start your spring semester strong with networking, snacks, and an intro to ACM-W.",
         rsvpLink: null
       },
       {
@@ -49,7 +72,7 @@ const events: EventsData = {
         time: "4:30 PM - 6:00 PM",
         location: "Bruininks Hall 432",
         image: "/images/events/posters/2025-galentines-party.png",
-        description: "Celebrate friendship, fun, and ACMW with crafts, music, and good company!",
+        description: "Celebrate friendship, fun, and ACM-W with crafts, music, and good company!",
         rsvpLink: null
       },
       {
@@ -59,7 +82,7 @@ const events: EventsData = {
         time: "5:00 PM - 6:30 PM",
         location: "Lind Hall 302",
         image: "/images/events/posters/2025-tech-talk.png",
-        description: "Collaborative study night with Minnesota Institute of Technology—come grind with us!",
+        description: "Collaborative study night with Minnesota Institute of Technology - come grind with us!",
         rsvpLink: null
       },
       {
@@ -141,7 +164,7 @@ const events: EventsData = {
         "time": "5:30 PM - 7:00 PM",
         "location": "HSEC 3-110",
         "image": "/images/events/posters/2024-spring-techkickoff.png",
-        "description": "Start your spring semester strong with networking, snacks, and an intro to ACMW.",
+        "description": "Start your spring semester strong with networking, snacks, and an intro to ACM-W.",
         "rsvpLink": null
       },
       {
@@ -151,7 +174,7 @@ const events: EventsData = {
         "time": "5:30 PM - 7:00 PM",
         "location": "Keller Hall 2-246",
         "image": "/images/events/posters/2024-galentines.png",
-        "description": "Celebrate friendship, fun, and ACMW with crafts, music, and good company!",
+        "description": "Celebrate friendship, fun, and ACM-W with crafts, music, and good company!",
         "rsvpLink": null
       },
       {
@@ -191,7 +214,7 @@ const events: EventsData = {
         "time": "5:00 PM - 7:00 PM",
         "location": "Bruininks Hall 330",
         "image": "/images/events/posters/2024-fall-tech-kickoff.png",
-        "description": "One of our many community-centered events at ACMW!",
+        "description": "One of our many community-centered events at ACM-W!",
         "rsvpLink": null
       },
       {
@@ -253,7 +276,7 @@ const events: EventsData = {
         "time": "5:30 PM - 7:30 PM",
         "location": "Bruininks Hall 144",
         "image": "/images/events/posters/2023-spring-techkickoff.png",
-        "description": "Start your spring semester strong with networking, snacks, and an intro to ACMW.",
+        "description": "Start your spring semester strong with networking, snacks, and an intro to ACM-W.",
         "rsvpLink": null
       },
       {
@@ -305,7 +328,7 @@ const events: EventsData = {
         "time": "4:30 PM - 6:00 PM",
         "location": "Tate Hall",
         "image": "/images/events/posters/2022-fallkickoff.png",
-        "description": "Kick off the semester with ACMW! Meet the board, make friends, and learn about upcoming events.",
+        "description": "Kick off the semester with ACM-W! Meet the board, make friends, and learn about upcoming events.",
         "rsvpLink": null
       },
       {

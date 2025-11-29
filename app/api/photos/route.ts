@@ -1,4 +1,4 @@
-// GET /api/event-photos — returns event photo metadata as JSON
+// GET /api/event-photos - returns event photo metadata as JSON
 
 
 import { NextResponse } from 'next/server'

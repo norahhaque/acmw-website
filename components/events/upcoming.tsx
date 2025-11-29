@@ -37,7 +37,7 @@ export default function Upcoming() {
 
       {/* Subtitle */}
       <motion.p className="text-gray-dark my-4 max-w-4xl sm:max-w-3xl text-sm text-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ delay: 0.1, duration: 0.5 }}>
-        We&apos;d love to see you! No experience necessary — if you&apos;re interested, just RSVP at the link.
+        We&apos;d love to see you! No experience necessary - if you&apos;re interested, just RSVP at the link.
       </motion.p>
 
       <div className="flex flex-col lg:flex-row justify-between items-start w-full max-w-[1100px] gap-8">

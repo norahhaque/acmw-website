@@ -13,7 +13,15 @@ export type Member = {
   description: string | null
 }
 
-const members: Member[] = [
+export type MembersData = {
+  current: Member[]
+  past: {
+    [academicYear: string]: Member[]
+  }
+}
+
+const membersData: MembersData = {
+  current: [
   {
     name: "Amelia Lunning",
     role: "President",
@@ -164,6 +172,34 @@ const members: Member[] = [
     ],
     description: "Dr. Watters, a Teaching Professor in Computer Science, brings years of experience in computing education and a deep commitment to supporting gender minorities in tech. As ACM-W's faculty advisor, she provides guidance and institutional support to help the club thrive."
   }
-]
+  ],
+  past: {
+    // When transitioning to a new board year:
+    // 1. Copy the entire `current` array above
+    // 2. Create a new entry here with the academic year as the key (format: "YYYY-YYYY")
+    // 3. Paste the copied board members as the value
+    // 4. Update the `current` array with the new board members
+    //
+    // Example:
+    // "2025-2026": [
+    //   {
+    //     name: "Amelia Lunning",
+    //     role: "President",
+    //     major: "Computer Science",
+    //     minor: "Math",
+    //     year: "4",
+    //     gradYear: "May 2026",
+    //     imgSrc: "/images/team/members/amelia-president.png",
+    //     about: [
+    //       { q: "What is your favorite CSCI class?", a: "CSCI 5161: Compilers" },
+    //       { q: "Tell us a fun fact about you!", a: "I figure skated for 10 years" },
+    //       { q: "What advice would you give to someone new to CS?", a: "Get involved!" }
+    //     ],
+    //     description: "Amelia is a senior majoring in Computer Science and minoring in Math!"
+    //   },
+    //   // ... rest of the board members
+    // ]
+  }
+}
 
-export default members
+export default membersData

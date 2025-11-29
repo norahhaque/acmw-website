@@ -99,9 +99,9 @@ export default function GetInvolved() {
                         },
                         {
                             title: "Connect",
-                            description: "Updates, events, and ways to connect — all linked below.",
+                            description: "Updates, events, and ways to connect - all linked below.",
                             children: (
-                                <div className="flex justify-center gap-6 mb-4">
+                                <div className="flex justify-center gap-6 mb-4 mt-4">
                                     {socials.map(({ icon, label, href }, idx) => (
                                         <a key={idx} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="text-maroon hover:text-[#5b0013] transition-colors duration-200">
                                             {icon}
@@ -117,27 +117,26 @@ export default function GetInvolved() {
                     ))}
                 </div>
 
-                {/* Right column: Stepper for explaining how to join the board */}
-                
-                <motion.div custom={3} initial="hidden" whileInView="visible"variants={cardVariants}>
+                {/* Right column: Join Us */}
+                <motion.div custom={3} initial="hidden" whileInView="visible" variants={cardVariants}>
                     <EngageCard
                         title="Join Us"
                         description="Passionate about tech, diversity, and leadership? Explore how to become a board member."
                     >
-                        <Stepper initialStep={1} stepCircleContainerClassName="!border-gray-300" stepContainerClassName="px-4 pt-4" footerClassName="px-4 pb-4">
-                            <Step>
-                                <h2 className="text-lg text-maroon font-header">Step 1:</h2>
-                                <h2 className="text-sm text-gray mt-1">
-                                    Attend 3+ meetings in a semester to become an official ACM-W member.
-                                </h2>
-                            </Step>
-                            <Step>
-                                <h2 className="text-lg text-maroon font-header">Step 2:</h2>
-                                <h2 className="text-sm text-gray mt-1">
-                                    Apply to open positions when they are posted!
-                                </h2>
-                            </Step>
-                        </Stepper>
+                            <Stepper initialStep={1} stepCircleContainerClassName="!border-gray-300" stepContainerClassName="px-4 pt-4" footerClassName="px-4 pb-4">
+                                <Step>
+                                    <h2 className="text-lg text-maroon font-header">Step 1:</h2>
+                                    <h2 className="text-sm text-gray mt-1">
+                                        Attend 3+ meetings in a semester to become an official ACM-W member. Benefits include adding membership to your resume, receiving our exclusive merch, and getting access to our room in Keller!
+                                    </h2>
+                                </Step>
+                                <Step>
+                                    <h2 className="text-lg text-maroon font-header">Step 2:</h2>
+                                    <h2 className="text-sm text-gray mt-1">
+                                        Apply to open positions when they are posted!
+                                    </h2>
+                                </Step>
+                            </Stepper>
                     </EngageCard>
                 </motion.div>
             </section>

@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <motion.div className="mt-20 mx-auto px-10 md:px-22 sm:px-15 flex flex-col" initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}>
 
-      {/* ACMW Title */}
+      {/* ACM-W Title */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
         <BlurText text="ACM-W." className="text-maroon font-heading text-[5.25rem] sm:text-8xl whitespace-nowrap overflow-hidden text-ellipsis" animateBy="letters" />
       </motion.div>
@@ -21,7 +21,7 @@ export default function Hero() {
       </motion.p>
 
 
-      {/* ACMW Image */}
+      {/* ACM-W Image */}
       <motion.div className="mt-10 lg:self-end pr-5" initial={{ opacity: 0, scale: 0.80 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 0.5 }}>
         <Image src="/images/team/board/2025-board-standing.jpg" height={800} width={800} alt="2025 ACM-W Group Picture" className='rounded-2xl'/>
       </motion.div>

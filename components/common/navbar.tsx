@@ -7,14 +7,14 @@ export default function NavBar() {
   return (
     <nav className="flex justify-between items-center px-8 py-4">
       
-      {/* Left side: ACMW logo linking to home */}
+      {/* Left side: ACM-W logo linking to home */}
       <div className="flex items-center space-x-2">
         <Link href="/">
           <Image 
             src="/images/homepage/acmw-logo.jpg"
             width={64}
             height={64}
-            alt="ACMW Logo"
+            alt="ACM-W Logo"
             className="cursor-pointer"
           />
         </Link>

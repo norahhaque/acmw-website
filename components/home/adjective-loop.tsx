@@ -6,7 +6,7 @@ import CurvedLoop from '../ui/CurvedLoop'
 // Displays a looping curved marquee of action words
 export default function AdjectiveLoop() {
     return (
-        <div className="hidden md:block">
+        <div className="hidden md:block md:mt-16">
             <CurvedLoop
                 marqueeText="Learn • Build • Lead • Code •"
                 speed={3}
