@@ -49,9 +49,9 @@ export default function Upcoming() {
         {/* Event Card or Fallback */}
         <motion.div className="w-full lg:w-1/2 flex justify-center" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ delay: 0.3, duration: 0.5 }}>
           {eventCard.title ? (
-            <div className="flex flex-row items-center shadow-md rounded-xl p-3 mt-1 w-full max-w-xl">
-              <Image alt="" src={eventCard.image} width={300} height={300} className="mr-4 lg:mr-2 rounded-lg" />
-              <div className="mt-4 lg:mt-0 sm:ml-4">
+            <div className="flex flex-col sm:flex-row items-center shadow-md rounded-xl p-3 mt-1 w-full max-w-xl">
+              <Image alt="" src={eventCard.image} width={300} height={300} className="w-full sm:w-40 sm:h-40 object-cover mr-0 sm:mr-4 lg:mr-2 rounded-lg" />
+              <div className="mt-4 sm:mt-0 sm:ml-4">
                 <h1 className="font-header text-xl">{eventCard.title}</h1>
                 <h3 className="italic text-sm">
                   {new Date(`${eventCard.date}T00:00:00`).toLocaleDateString("en-US", {
