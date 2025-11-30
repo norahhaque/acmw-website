@@ -1,6 +1,5 @@
 # ACM-W Website Documentation
-
-**Hello future webmaster!** This entire document should give you everything you need to upkeep our website. As of August 2025, we have moved from our previous content management system named Drupal (this is the standard University of Minnesota CMS) to an entirely new Next.js application! Maintaining this will give you a lot of exposure to how modern-day web applications are built and should be a really cool thing to add to your resume!! Building and maintaining this site definitely helped me quite a bit during the job application process. You will learn a ton of valuable skills!
+Heyy future webmaster! This entire document should give you everything you need to upkeep our website. As of August 2025, we have moved from our previous content management system named Drupal (this is the standard University of Minnesota CMS) to an entirely new Next.js application! Maintaining this will give you a lot of exposure to how modern-day web applications are built and should be a really cool thing to add to your resume!! Building and maintaining this site definitely helped me quite a bit during the job application process. You will learn a ton of valuable skills!
 
 If you're getting overwhelmed, just know I've kept coding to a bare minimum so you won't need to pick up any coding skills unless you want to! Without further ado, let's jump in 😝
 
@@ -20,11 +19,15 @@ Feel free to use these links to quick-jump to a specific section if you're ever 
 
 Before you can start making changes to the website, you'll need to set up your development environment on your computer. Don't get too freaked out by all the steps, this is a one-time setup, and I'll walk you through everything! It shouldn't take more than 10-20 minutes.
 
-### Get Github Access
+### 1. Get Github Access
 
 First, make sure you have access to the GitHub repository. You'll need to be added as a **collaborator** on the repo so that you have write access to the codebase. If you haven't been added yet, reach out to the current tech lead and ask them to add you. They can do this by going to the repository settings on GitHub and inviting you via your GitHub account email.
 
-### Clone the Repository
+### 2. Get Vercel Access
+
+You'll also want to get added to Vercel! Vercel is the platform that hosts and deploys our website. Having access lets you see deployment logs, check if builds succeeded or failed, and troubleshoot any issues. Just ask the previous webmaster or tech lead to invite you using your email. Once you're in, you can log in at https://vercel.com/dashboard to keep an eye on things!
+
+### 3. Clone the Repository
 
 Once you have GitHub access, you're going to have to clone the repository to your local machine (fancy speak for your computer). Open your terminal (on Mac) or command prompt (on Windows) and run this command to download the website code to your computer. Make sure to run these wherever you want the directory to be on your machine (ie: Desktop, a folder named Projects, whatever you want!).
 
@@ -35,7 +38,7 @@ cd acmw-website
 
 This creates a folder called `acmw-website` on your computer with all the website files inside.
 
-### Install Dependencies
+### 4. Install Dependencies
 
 The website relies on various packages and libraries to run properly. To install all of them at once, run:
 
@@ -45,7 +48,7 @@ npm install
 
 This might take a few minutes, but you only need to do this once (or whenever new dependencies are added to the project).
 
-### Run the Development Server
+### 5. Run the Development Server
 
 Now you're ready to see the website running on your computer! Run:
 
@@ -61,11 +64,11 @@ http://localhost:3000
 
 And you should see the ACM-W website! This is your **local development version**, any changes you make to the code will automatically show up here. The live website won't be affected by anything you do until you push your changes to GitHub.
 
-### Make Your Changes
+### 6. Make Your Changes
 
 Yay! You can now edit files! Common tasks include adding new events to `/data/events.ts`, updating board members in `/data/members.ts`, or uploading new images to the `/public` folder. We'll cover exactly how to do all of these in the sections that follow this one.
 
-### Test Locally
+### 7. Test Locally
 
 After making your changes, check them on your local development server (the one running at `http://localhost:3000`). Make sure everything looks good and that:
 - Images load correctly
@@ -75,7 +78,7 @@ After making your changes, check them on your local development server (the one 
 
 Take your time here! It's much easier to catch mistakes locally than after they're already live.
 
-### Use Git to commit your changes!
+### 8. Use Git to commit your changes!
 
 Once you're happy with your changes and everything looks good, it's time to save them using Git. If you're new to Git, the topic might seem overwhelming at first but genuinely, Git / version control is one of the most important tools to know as a developer that sadly never gets taught to you formally in your coursework at the University. You only need to know three commands to make this all work here!
 
@@ -99,11 +102,43 @@ git push origin main
 
 This command is what actually uploads your changes to the GitHub repository. Within 2-3 minutes, Vercel (our deployment platform) will automatically detect the change, rebuild the website, and deploy it at the live URL. You don't need to do anything else, it all happens automatically!
 
-### Verify the Live Site
+Quick note, when you run `git push`, I've configured "Git hooks" (basically automatic scripts that run at certain times) to run some checks to make sure you're not pushing broken code that Vercel, our deployment platform, will complain about. The hooks get installed automatically when you run `npm install`, so you don't need to do anything special to set them up!
 
-After a few minutes, visit the live website at **acmw.umn.edu** and double-check that your changes appear as they should. If something looks off, you can always make another fix and do the add/commit/push flow again.
 
-### Done!
+1. **Linting check** runs first — this checks your code for any style or quality issues
+2. **Build check** runs next — this makes sure the website can actually build successfully
+3. If both pass, your push goes through normally!
+4. If something fails, the push will be blocked and you'll see an error message telling you what went wrong. 
+
+**What you'll see when pushing:**
+
+If everything is good:
+```bash
+$ git push origin main
+Running pre-push checks...
+→ Linting code...
+✔ No ESLint warnings or errors
+→ Building project...
+✓ Compiled successfully
+✓ All checks passed!
+[Your code gets pushed to GitHub]
+```
+
+If something needs fixing:
+```bash
+$ git push origin main
+Running pre-push checks...
+→ Linting code...
+✗ Linting failed. Fix errors and try again.
+[Push stops — you will need to fix the errors first]
+```
+
+
+### 9. Verify the Live Site
+
+After a few minutes, if there were no lint or build errors, the live site should be up at **acmw.umn.edu** with your new changes. Double-check that your changes appear as they should. If something looks off, you can always make another fix and do the add/commit/push flow again.
+
+### 10. Done!
 
 That's basically all you need to get started. All of your future work will basically be repeating steps 5-8 whenevever you make any changes to the site from this point onwards. The rest of this document will walk you through the specific changes you might need to make like adding events, managing photos, and updating board members.
 
@@ -191,8 +226,9 @@ Board members are stored in `/data/members.ts`.
    - A short description
 
 **Photo Requirements:**
-- Background removed
-- White background added
+- Background removed (I recommend Adobe’s free background remover tool for this)
+- White background added (I recommend Adobe for this as well!)
+- Semi professional headshot style 
 - PNG format preferred
 - At least 400×400px
 - File name format: `firstname-role.png`
@@ -225,43 +261,30 @@ At the end of each academic year:
 
 Past boards appear at: `https://acmw.umn.edu/team/past`
 
----
+### Updating the Board Header Image
 
-## Photo Guidelines Overview
-
-### Board Member Photos
-
-I've touched on this before but just to rehash this:
-- Background removed
-- White background
-- Professional headshot style
-- PNG, high resolution (min 400×400px)
-
-**Tools to use:**
-- Adobe Express (recommended)
-- Remove.bg
-- Canva
-- Photoshop
+When you transition to a new board, you'll also need to update the big header image at the top of the team page (the one with "THE BOARD" text overlay)!
 
 **Steps:**
-1. Remove background
-2. Add white background
-3. Resize
-4. Save as PNG
-5. Name the file properly
 
-### Event Posters
+1. Take a new group photo of the entire board (this is the image that shows at the very top of the team page)
 
-- Square format recommended (~800×800px)
-- PNG or JPG
-- Screenshot of Instagram flyer is acceptable
+2. Open the Canva template here: https://www.canva.com/design/DAGsyfs1zig/jXAZRxhmF9fXTGNd3moQQg/edit
 
-### Event Photos
+3. Replace the current board photo with your new board photo
+   - Keep the "THE BOARD" text overlay exactly the same
+   - Just adjust the positioning/sizing of the photo if needed to make it look good
+   - Don't change the text styling or wording!
 
-- Any resolution
-- WEBP preferred
-- JPG/PNG also fine
-- Use event ID in filename
+4. Download the image from Canva as a PNG
+
+5. Replace the file at: `/public/images/team/board/board-header.png`
+   - Keep the same filename: `board-header.png`
+   - Just overwrite the old one with your new image
+
+6. Test it by running `npm run dev` and visiting `http://localhost:3000/team`
+
+That's it! The new header image will automatically show up on the team page.
 
 ---
 
