@@ -63,7 +63,7 @@ Live site: **[acmw.umn.edu](https://acmw.umn.edu)**
 ## Local Setup
 
 ```bash
-git clone https://github.com/norahhaque/acmw-website.git
+git clone https://github.com/acmw-umn/acmw-website.git
 cd acmw-website
 npm install
 npm run dev
@@ -77,9 +77,10 @@ Site runs locally at `http://localhost:3000`
 
 * Live site: **[acmw.umn.edu](https://acmw.umn.edu)**
 * Hosted on **Vercel** with automatic deploys on pushes to `main`
+* Repository managed under **acmw-umn** GitHub organization (transferred from personal account in 2025 for organizational ownership)
 * Git hooks (via Husky) run lint and build checks before each push to ensure code quality
 * Add new webmasters to:
-  * GitHub repo as collaborators
+  * GitHub organization as members with repo access
   * Vercel project as team members (for deploy logs and previews)
 
 ---

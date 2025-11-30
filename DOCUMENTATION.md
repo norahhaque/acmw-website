@@ -21,7 +21,9 @@ Before you can start making changes to the website, you'll need to set up your d
 
 ### 1. Get Github Access
 
-First, make sure you have access to the GitHub repository. You'll need to be added as a **collaborator** on the repo so that you have write access to the codebase. If you haven't been added yet, reach out to the current tech lead and ask them to add you. They can do this by going to the repository settings on GitHub and inviting you via your GitHub account email.
+First, make sure you have access to the GitHub repository. You'll need to be added as a **member of the acmw-umn organization** so that you have write access to the codebase. If you haven't been added yet, reach out to the current tech lead and ask them to send you an invite to the organization. They can do this by going to the organization settings on GitHub and inviting you via your GitHub account email.
+
+Quick note: As of 2025, the repository lives under the **acmw-umn** organization on GitHub rather than a personal account. This means the website officially belongs to ACM-W as an organization, which makes it easier to manage access and ensures continuity as board members transition each year!
 
 ### 2. Get Vercel Access
 
@@ -32,7 +34,7 @@ You'll also want to get added to Vercel! Vercel is the platform that hosts and d
 Once you have GitHub access, you're going to have to clone the repository to your local machine (fancy speak for your computer). Open your terminal (on Mac) or command prompt (on Windows) and run this command to download the website code to your computer. Make sure to run these wherever you want the directory to be on your machine (ie: Desktop, a folder named Projects, whatever you want!).
 
 ```bash
-git clone https://github.com/norahhaque/acmw-website.git
+git clone https://github.com/acmw-umn/acmw-website.git
 cd acmw-website
 ```
 
