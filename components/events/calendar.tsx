@@ -11,10 +11,18 @@ import type { Event } from '@/data/events'
 export default function ACMWCalendar() {
   const [date, setDate] = useState<Date | null>(new Date())
 
-  // Filter out invalid placeholders and events without a date
-  const validEvents: Event[] = eventsData.upcoming.filter(
+  // Filter out invalid placeholders and events without a date from upcoming
+  const validUpcomingEvents: Event[] = eventsData.upcoming.filter(
     (event) => event.title !== 'No Upcoming Events' && event.date
   )
+
+  // Collect all past events from all years
+  const validPastEvents: Event[] = Object.values(eventsData.past)
+    .flat()
+    .filter((event) => event.title !== 'No Upcoming Events' && event.date)
+
+  // Combine upcoming and past events
+  const validEvents: Event[] = [...validUpcomingEvents, ...validPastEvents]
 
   // Create a map of 'YYYY-MM-DD' -> 'Event Title' for lookup
   const eventsMap: Record<string, string> = {}
@@ -33,7 +41,7 @@ export default function ACMWCalendar() {
   const eventMsg = eventsMap[selectedKey]
 
   return (
-    <div className="p-6 bg-white rounded-2xl shadow-md w-fit mx-auto">
+    <div className="p-6 bg-white rounded-2xl shadow-md w-full max-w-fit mx-auto overflow-x-auto">
       {/* Calendar UI with dots under event dates */}
       <Calendar
         onChange={handleDateChange}
@@ -41,7 +49,7 @@ export default function ACMWCalendar() {
         tileContent={({ date }) => {
           const key = date.toISOString().split('T')[0]
           return eventsMap[key] ? (
-            <div className="mt-1 w-1.5 h-1.5 rounded-full bg-maroon mx-auto" />
+            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-maroon" />
           ) : null
         }}
       />

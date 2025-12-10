@@ -19,4 +19,5 @@
 .react-calendar__tile {
   padding: 8px 0 !important;
   border-radius: 6px;
+  position: relative !important;
 }
