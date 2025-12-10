@@ -1,6 +1,6 @@
+
 "use client"
 
-import React from 'react'
 import ACMWCalendar from './calendar'
 import SectionHeader from '../common/section-header'
 import Image from 'next/image'
@@ -14,19 +14,25 @@ export default function Upcoming() {
   const upcoming: Event[] = events.upcoming
   const hasRealEvent = upcoming.length > 0 && upcoming[0].title !== 'No Upcoming Events'
 
-  // Show the first real upcoming event, or fallback placeholder if none
-  const eventCard: Event = hasRealEvent
+  // Get today's date at midnight for comparison
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+
+  // Check if the first upcoming event has passed
+  const firstEvent = hasRealEvent ? upcoming[0] : null
+  const eventHasPassed = firstEvent && firstEvent.date
+    ? new Date(firstEvent.date + 'T00:00:00') < today
+    : false
+
+  // Find event with ID 0 from past events
+  const eventId0 = events.past["2022"].find(event => event.id === 0)!
+
+  // Show the first real upcoming event, or event ID 0 if date has passed or no upcoming events
+  const eventCard: Event = eventHasPassed
+    ? eventId0
+    : hasRealEvent
     ? upcoming[0]
-    : {
-        id: 9999,
-        title: '',
-        image: '/images/events/posters/delay.jpg',
-        date: '',
-        time: '',
-        location: '',
-        description: '',
-        rsvpLink: null,
-      }
+    : eventId0
 
   return (
     <div className="w-full flex flex-col items-center px-4">
@@ -49,8 +55,8 @@ export default function Upcoming() {
         {/* Event Card or Fallback */}
         <motion.div className="w-full lg:w-1/2 flex justify-center" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ delay: 0.3, duration: 0.5 }}>
           {eventCard.title ? (
-            <div className="flex flex-col sm:flex-row items-center shadow-md rounded-xl p-3 mt-1 w-full max-w-xl">
-              <Image alt="" src={eventCard.image} width={300} height={300} className="w-full sm:w-40 sm:h-40 object-cover mr-0 sm:mr-4 lg:mr-2 rounded-lg" />
+            <div className="flex flex-col sm:flex-row items-center shadow-md rounded-xl px-3 py-8 mt-1 w-full max-w-xl">
+              <Image alt="" src={eventCard.image} width={400} height={500} className="w-full sm:w-60 sm:h-75 object-cover mr-0 sm:mr-4 lg:mr-2 rounded-lg" />
               <div className="mt-4 sm:mt-0 sm:ml-4">
                 <h1 className="font-header text-xl">{eventCard.title}</h1>
                 <h3 className="italic text-sm">
@@ -71,7 +77,7 @@ export default function Upcoming() {
               </div>
             </div>
           ) : (
-            <Image src={eventCard.image} alt="Check back soon" width={350} height={350} className="rounded-lg mt-2" />
+            <Image src={eventCard.image} alt="Check back soon" width={400} height={500} className="rounded-lg mt-2" />
           )}
         </motion.div>
       </div>
@@ -92,3 +98,4 @@ export default function Upcoming() {
     </div>
   )
 }
+
